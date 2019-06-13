@@ -21,6 +21,15 @@ Lab, playground, or anything that's related to Android developement.
 
 ### Module structure
 
-- buildSrc
+- build-tools
+  All build configurations and logics stands here. Head over to [here](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources) to get more info.
+
+  > There are other option: `buildSrc`. But there's some reason that I didn't use it.
+  >
+  > 1. Some limitations when editting. For example, tests are not properly executed in IDE. When you sync gradle, buildSrc is automatically be built, and you should manuallly open the build reports to get the test result.
+  > 2. To try "composite build" in Gradle. It's relatively new concept, and it might be useful in some cases.
+
 - libs
+  Collection of deployable gradle modules. It can be anything - pure kotlin library, or Android-specific libraries
 - lab
+  Where I test modules
