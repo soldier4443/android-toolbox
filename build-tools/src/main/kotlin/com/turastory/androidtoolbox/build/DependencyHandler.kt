@@ -9,8 +9,24 @@ val DependencyHandler.kotlinJvm
 val DependencyHandler.junit
     get() = "junit:junit:${Version.junit}"
 
+val DependencyHandler.rxJava: String
+    get() = "io.reactivex.rxjava2:rxjava:${Version.rxJava}"
+
+val DependencyHandler.rxAndroid: String
+    get() = "io.reactivex.rxjava2:rxandroid:${Version.rxAndroid}"
+
+fun DependencyHandler.rxBinding(
+    module: String? = null,
+    version: String = Version.rxBinding
+): String =
+    "com.jakewharton.rxbinding3:rxbinding${optionalModule(module)}:$version"
+
 fun DependencyHandler.kotlinx(module: String, version: String? = null): Any =
-    "org.jetbrains.kotlinx:kotlinx-$module${version?.let { ":$version" } ?: ""}"
+    "org.jetbrains.kotlinx:kotlinx-$module${optionalVersion(version)}"
 
 fun DependencyHandler.androidx(artifact: String, module: String? = null, version: String): Any =
-    "androidx.$artifact:$artifact${module?.let { "-$module" } ?: ""}:$version"
+    "androidx.$artifact:$artifact${optionalModule(module)}:$version"
+
+private fun optionalModule(module: String?) = module?.let { "-$module" } ?: ""
+
+private fun optionalVersion(version: String?) = version?.let { ":$version" } ?: ""

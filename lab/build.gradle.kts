@@ -2,6 +2,9 @@ import com.turastory.androidtoolbox.build.Version
 import com.turastory.androidtoolbox.build.androidx
 import com.turastory.androidtoolbox.build.junit
 import com.turastory.androidtoolbox.build.kotlinJvm
+import com.turastory.androidtoolbox.build.rxAndroid
+import com.turastory.androidtoolbox.build.rxBinding
+import com.turastory.androidtoolbox.build.rxJava
 
 plugins {
     id("com.android.application")
@@ -24,7 +27,10 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -40,6 +46,11 @@ dependencies {
     implementation(androidx("appcompat", version = Version.Lab.appcompat))
     implementation(androidx("core", "ktx", version = Version.Lab.core))
     implementation(androidx("constraintlayout", version = Version.Lab.constraintLayout))
+
+    implementation(rxJava)
+    implementation(rxAndroid)
+    implementation(rxBinding())
+
     testImplementation(junit)
     androidTestImplementation("androidx.test:runner:${Version.Lab.test}")
     androidTestImplementation("androidx.test.espresso:espresso-core:${Version.Lab.espresso}")
