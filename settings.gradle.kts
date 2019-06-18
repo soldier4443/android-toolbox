@@ -4,4 +4,5 @@ fun includeProject(name: String, projectPath: String? = null) {
 }
 
 includeBuild("build-tools")
-includeProject("lab")
+includeProject(":lab")
+includeProject(":databinding", "libs/databinding")

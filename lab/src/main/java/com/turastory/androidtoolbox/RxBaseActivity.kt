@@ -1,10 +1,9 @@
 package com.turastory.androidtoolbox
 
-import androidx.appcompat.app.AppCompatActivity
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-abstract class RxBaseActivity : AppCompatActivity() {
+abstract class RxBaseActivity : BaseActivity() {
 
     private val disposables = CompositeDisposable()
 

@@ -2,6 +2,7 @@ import com.turastory.androidtoolbox.build.Version
 import com.turastory.androidtoolbox.build.androidx
 import com.turastory.androidtoolbox.build.junit
 import com.turastory.androidtoolbox.build.kotlinJvm
+import com.turastory.androidtoolbox.build.kotlinReflect
 import com.turastory.androidtoolbox.build.rxAndroid
 import com.turastory.androidtoolbox.build.rxBinding
 import com.turastory.androidtoolbox.build.rxJava
@@ -38,11 +39,18 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    dataBinding {
+        setEnabled(true)
+    }
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation(project(":databinding"))
+
     implementation(kotlinJvm)
+    implementation(kotlinReflect)
     implementation(androidx("appcompat", version = Version.Lab.appcompat))
     implementation(androidx("core", "ktx", version = Version.Lab.core))
     implementation(androidx("constraintlayout", version = Version.Lab.constraintLayout))

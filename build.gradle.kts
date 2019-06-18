@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 buildscript {
     repositories {
         google()
@@ -20,5 +22,11 @@ allprojects {
 tasks {
     register("clean", Delete::class) {
         delete(rootProject.buildDir)
+    }
+
+    withType<KotlinCompile> {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
     }
 }

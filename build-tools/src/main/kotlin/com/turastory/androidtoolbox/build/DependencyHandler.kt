@@ -6,6 +6,9 @@ import org.gradle.kotlin.dsl.kotlin
 val DependencyHandler.kotlinJvm
     get() = kotlin("stdlib-jdk8", Version.kotlin)
 
+val DependencyHandler.kotlinReflect
+    get() = kotlin("reflect", Version.kotlin)
+
 val DependencyHandler.junit
     get() = "junit:junit:${Version.junit}"
 
