@@ -1,3 +1,4 @@
+import com.turastory.androidtoolbox.build.StudioConfig
 import com.turastory.androidtoolbox.build.Version
 import com.turastory.androidtoolbox.build.androidx
 import com.turastory.androidtoolbox.build.junit
@@ -36,8 +37,8 @@ dependencies {
     implementation(kotlinJvm)
     implementation(androidx("appcompat", version = Version.Libs.appcompat))
     implementation(androidx("core", "ktx", version = Version.Libs.core))
-    implementation(androidx("databinding", "adapters", "3.4.1"))
-    implementation(androidx("databinding", "common", "3.4.1"))
-    implementation(androidx("databinding", "runtime", "3.4.1"))
+    implementation(androidx("databinding", "adapters", StudioConfig.version))
+    implementation(androidx("databinding", "common", StudioConfig.version))
+    implementation(androidx("databinding", "runtime", StudioConfig.version))
     testImplementation(junit)
 }
