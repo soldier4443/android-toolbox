@@ -51,6 +51,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":databinding"))
     implementation(project(":lifecycle"))
+    implementation(project(":animation"))
 
     implementation(material(Version.Lab.material))
 
@@ -69,7 +70,7 @@ dependencies {
     implementation(rxAndroid)
     implementation(rxBinding())
 
-    implementation("in.arunkumarsampath:transition-x:1.0.1")
+    implementation("at.wirecube:additive_animations:1.6.2")
     implementation(lottie(Version.Lab.lottie))
 
     testImplementation(junit)

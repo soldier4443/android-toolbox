@@ -2,10 +2,10 @@
 <layout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/grey_1">
@@ -24,6 +24,7 @@
             android:id="@+id/frontView"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:alpha="0"
             android:background="@drawable/bg_black_80_round_4dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/base"
