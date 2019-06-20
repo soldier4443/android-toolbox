@@ -33,6 +33,9 @@ fun DependencyHandler.androidx(artifact: String, module: String? = null, version
 fun DependencyHandler.archCore(module: String, version: String): Any =
     "androidx.arch.core:core-$module:$version"
 
+fun DependencyHandler.material(version: String): Any =
+    "com.google.android.material:material:$version"
+
 private fun optionalModule(module: String?) = module?.let { "-$module" } ?: ""
 
 private fun optionalVersion(version: String?) = version?.let { ":$version" } ?: ""

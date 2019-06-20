@@ -23,6 +23,8 @@ object Version {
         const val constraintLayout = "1.1.3"
         const val test = "1.2.0"
         const val espresso = "3.2.0"
+        const val lottie = "3.0.6"
+        const val material = "1.1.0-alpha06"
     }
 
     object Android {

@@ -3,6 +3,7 @@ import com.turastory.androidtoolbox.build.androidx
 import com.turastory.androidtoolbox.build.junit
 import com.turastory.androidtoolbox.build.kotlinJvm
 import com.turastory.androidtoolbox.build.kotlinReflect
+import com.turastory.androidtoolbox.build.lottie
 import com.turastory.androidtoolbox.build.material
 import com.turastory.androidtoolbox.build.rxAndroid
 import com.turastory.androidtoolbox.build.rxBinding
@@ -67,6 +68,9 @@ dependencies {
     implementation(rxJava)
     implementation(rxAndroid)
     implementation(rxBinding())
+
+    implementation("in.arunkumarsampath:transition-x:1.0.1")
+    implementation(lottie(Version.Lab.lottie))
 
     testImplementation(junit)
     androidTestImplementation("androidx.test:runner:${Version.Lab.test}")
