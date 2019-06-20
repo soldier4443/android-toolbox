@@ -9,11 +9,14 @@ object Version {
     const val rxAndroid = "2.1.1"
     const val rxBinding = "3.0.0-alpha2"
 
+    const val transition = "1.0.1"
+
     object Libs {
         const val appcompat = "1.1.0-beta01"
         const val core = "1.2.0-alpha02"
         const val lifecycle = "2.2.0-alpha01"
         const val archCore = "2.1.0-beta01"
+        const val lottie = "3.0.6"
     }
 
     object Lab {
