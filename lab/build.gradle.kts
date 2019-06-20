@@ -3,6 +3,7 @@ import com.turastory.androidtoolbox.build.androidx
 import com.turastory.androidtoolbox.build.junit
 import com.turastory.androidtoolbox.build.kotlinJvm
 import com.turastory.androidtoolbox.build.kotlinReflect
+import com.turastory.androidtoolbox.build.material
 import com.turastory.androidtoolbox.build.rxAndroid
 import com.turastory.androidtoolbox.build.rxBinding
 import com.turastory.androidtoolbox.build.rxJava
@@ -49,6 +50,8 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":databinding"))
     implementation(project(":lifecycle"))
+
+    implementation(material(Version.Lab.material))
 
     implementation(kotlinJvm)
     implementation(kotlinReflect)
