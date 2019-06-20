@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".animation.AnimationTestActivity" />
+        <activity android:name=".lifecycle.LifecycleTestActivity" />
     </application>
 
 </manifest>

@@ -48,12 +48,18 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":databinding"))
+    implementation(project(":lifecycle"))
 
     implementation(kotlinJvm)
     implementation(kotlinReflect)
     implementation(androidx("appcompat", version = Version.Lab.appcompat))
     implementation(androidx("core", "ktx", version = Version.Lab.core))
     implementation(androidx("constraintlayout", version = Version.Lab.constraintLayout))
+
+    implementation(androidx("lifecycle", "extensions", version = Version.Libs.lifecycle))
+    implementation(androidx("lifecycle", "runtime", version = Version.Lab.lifecycle))
+    implementation(androidx("lifecycle", "viewmodel-ktx", version = Version.Lab.lifecycle))
+    implementation(androidx("lifecycle", "livedata-ktx", version = Version.Lab.lifecycle))
 
     implementation(rxJava)
     implementation(rxAndroid)

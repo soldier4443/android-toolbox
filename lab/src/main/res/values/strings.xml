@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">android-toolbox</string>
-    <string name="counter">Count: %d</string>
+    <string name="counter_text">Count: %d</string>
 </resources>

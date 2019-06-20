@@ -30,6 +30,9 @@ fun DependencyHandler.kotlinx(module: String, version: String? = null): Any =
 fun DependencyHandler.androidx(artifact: String, module: String? = null, version: String): Any =
     "androidx.$artifact:$artifact${optionalModule(module)}:$version"
 
+fun DependencyHandler.archCore(module: String, version: String): Any =
+    "androidx.arch.core:core-$module:$version"
+
 private fun optionalModule(module: String?) = module?.let { "-$module" } ?: ""
 
 private fun optionalVersion(version: String?) = version?.let { ":$version" } ?: ""
