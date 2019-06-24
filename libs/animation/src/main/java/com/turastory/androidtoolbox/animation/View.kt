@@ -6,10 +6,13 @@ import at.wirecube.additiveanimations.additive_animator.AnimationEndListener
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
 
-fun View.fade(delay: Long = 1000L) {
+fun View.fade(
+    delay: Long = 1000L,
+    lazy: Boolean = false
+): AdditiveAnimator {
     visibility = View.VISIBLE
     alpha = 0f
-    AdditiveAnimator.animate(this)
+    return AdditiveAnimator.animate(this)
         .alpha(1f)
         .thenWithDelay(delay)
         .alpha(0f)
@@ -18,13 +21,16 @@ fun View.fade(delay: Long = 1000L) {
                 visibility = View.GONE
             }
         })
-        .start()
+        .apply {
+            if (!lazy) start()
+        }
 }
 
 fun View.fadeWith(
     lottie: LottieAnimationView,
-    minimumDelay: Long = 1000L
-) {
+    minimumDelay: Long = 1000L,
+    lazy: Boolean = false
+): AdditiveAnimator {
     if (lottie.repeatCount == LottieDrawable.INFINITE)
         lottie.repeatCount = 0
 
@@ -32,7 +38,7 @@ fun View.fadeWith(
 
     visibility = View.VISIBLE
     alpha = 0f
-    AdditiveAnimator.animate(this)
+    return AdditiveAnimator.animate(this)
         .addStartAction {
             lottie.playAnimation()
         }
@@ -44,5 +50,7 @@ fun View.fadeWith(
                 visibility = View.GONE
             }
         })
-        .start()
+        .apply {
+            if (!lazy) start()
+        }
 }
