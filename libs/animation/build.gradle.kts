@@ -43,7 +43,7 @@ dependencies {
     implementation(androidx("transition", version = Version.transition))
 
     implementation(transitionx)
-    implementation("at.wirecube:additive_animations:1.6.2")
+    implementation("at.wirecube:additive_animations:1.7.2")
     implementation(lottie(Version.Libs.lottie))
 
     testImplementation(archCore("testing", version = Version.Libs.archCore))
