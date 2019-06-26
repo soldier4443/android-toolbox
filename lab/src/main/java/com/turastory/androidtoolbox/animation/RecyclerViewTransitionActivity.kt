@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.ListAdapter
 import com.turastory.androidtoolbox.R
 import com.turastory.androidtoolbox.RxBaseActivity
 import com.turastory.androidtoolbox.animation.TransitionTestAdapter.ViewHolder
+import com.turastory.androidtoolbox.base.ModelListener
+import com.turastory.androidtoolbox.base.PositionedModelListener
 import com.turastory.androidtoolbox.configurable.TestBase
 import com.turastory.androidtoolbox.databinding.ActivityRvTransitionTestBinding
 import com.turastory.androidtoolbox.databinding.BindingViewHolder
@@ -56,9 +58,6 @@ data class TransitionTestModel(
     val id: Int,
     val active: Boolean
 )
-
-typealias PositionedModelListener<T> = (position: Int, model: T) -> Unit
-typealias ModelListener<T> = (model: T) -> Unit
 
 class TransitionTestAdapter(private val listener: PositionedModelListener<TransitionTestModel>) :
     ListAdapter<TransitionTestModel, ViewHolder>(diff) {
