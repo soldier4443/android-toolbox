@@ -26,11 +26,14 @@ class AnimationTestActivity : RxBaseActivity(), TestBase {
             .clicks()
             .preventMultipleEmission()
             .subscribe({
-                startTransition()
+                binding.frontView.fade()
             }, Throwable::printStackTrace)
-    }
 
-    private fun startTransition() = with(binding) {
-        frontView.fadeWith(frontLottie)
+        +binding.animateSecondButton
+            .clicks()
+            .preventMultipleEmission()
+            .subscribe({
+                binding.frontSecondView.fade()
+            }, Throwable::printStackTrace)
     }
 }

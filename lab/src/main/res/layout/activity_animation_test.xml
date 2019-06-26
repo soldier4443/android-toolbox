@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/frontView"
+            android:id="@+id/front_second_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:alpha="0"
@@ -34,7 +34,7 @@
             tools:visibility="visible">
 
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/frontLottie"
+                android:id="@+id/front_second_lottie"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_marginStart="24dp"
@@ -45,7 +45,7 @@
                 app:lottie_fileName="lottie/done.json" />
 
             <TextView
-                android:id="@+id/frontText"
+                android:id="@+id/front_second_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -53,7 +53,45 @@
                 android:textColor="@color/white_1"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/frontLottie"
+                app:layout_constraintStart_toEndOf="@+id/front_second_lottie"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/front_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0"
+            android:background="@drawable/bg_black_80_round_4dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/base"
+            app:layout_constraintEnd_toEndOf="@+id/base"
+            app:layout_constraintStart_toStartOf="@+id/base"
+            app:layout_constraintTop_toTopOf="@+id/base"
+            tools:visibility="visible">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/front_lottie"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="false"
+                app:lottie_fileName="lottie/done.json" />
+
+            <TextView
+                android:id="@+id/front_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Hello World!"
+                android:textColor="@color/white_1"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/front_lottie"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -63,10 +101,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="animate"
+            android:text="alpha"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/animate_second_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/animate_second_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="fadeVisiblity"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/animate_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

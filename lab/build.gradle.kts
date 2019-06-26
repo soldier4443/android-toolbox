@@ -70,7 +70,7 @@ dependencies {
     implementation(rxAndroid)
     implementation(rxBinding())
 
-    implementation("at.wirecube:additive_animations:1.6.2")
+    implementation("at.wirecube:additive_animations:1.7.2")
     implementation(lottie(Version.Lab.lottie))
 
     testImplementation(junit)

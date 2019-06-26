@@ -23,6 +23,19 @@ fun View.fade(
         }
 }
 
+fun View.fadeWithFadeVisiblity(
+    delay: Long = 1000L,
+    lazy: Boolean = false
+): AdditiveAnimator {
+    return AdditiveAnimator.animate(this)
+        .fadeVisibility(View.VISIBLE)
+        .thenWithDelay(delay)
+        .fadeVisibility(View.GONE)
+        .apply {
+            if (!lazy) start()
+        }
+}
+
 fun View.fadeWith(
     lottie: LottieAnimationView,
     minimumDelay: Long = 1000L,
