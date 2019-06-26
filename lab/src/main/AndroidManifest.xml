@@ -20,6 +20,7 @@
         <activity android:name=".animation.AnimationTestActivity" />
         <activity android:name=".lifecycle.LifecycleTestActivity" />
         <activity android:name=".animation.RecyclerViewTransitionActivity" />
+        <activity android:name=".viewpager.ViewPagerTestActivity" />
     </application>
 
 </manifest>
