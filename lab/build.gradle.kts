@@ -1,4 +1,5 @@
 import com.turastory.androidtoolbox.build.Version
+import com.turastory.androidtoolbox.build.android.configureCommons
 import com.turastory.androidtoolbox.build.androidx
 import com.turastory.androidtoolbox.build.junit
 import com.turastory.androidtoolbox.build.kotlinJvm
@@ -15,31 +16,18 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Version.Android.compileSdkVersion)
-    buildToolsVersion(Version.Android.buildToolsVersion)
-
-    defaultConfig {
-        applicationId = "com.turastory.androidtoolbox"
-        minSdkVersion(Version.Android.minSdkVersion)
-        targetSdkVersion(Version.Android.targetSdkVersion)
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
+    configureCommons(
+        code = 1,
+        name = "1.0.0"
+    )
 
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     dataBinding {

@@ -1,3 +1,4 @@
+import com.turastory.androidtoolbox.build.android.configureAndroidCommons
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
@@ -12,10 +13,18 @@ buildscript {
     }
 }
 
+val libVersionCode = 1
+val libVersionName = "1.0.0"
+
 allprojects {
     repositories {
         google()
         jcenter()
+    }
+
+    if (this != rootProject && name != "lab") {
+        println("Library Configuration Targets: $name")
+        configureAndroidCommons(libVersionCode, libVersionName)
     }
 }
 
