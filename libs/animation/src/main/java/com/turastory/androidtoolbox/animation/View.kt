@@ -6,7 +6,7 @@ import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
 
 fun View.fade(
-    delay: Long = 1000L,
+    delay: Long = VISIBLE_DELAY,
     lazy: Boolean = false
 ): AdditiveAnimator {
     visibility = View.VISIBLE
@@ -24,7 +24,7 @@ fun View.fade(
 }
 
 fun View.fadeWithFadeVisiblity(
-    delay: Long = 1000L,
+    delay: Long = VISIBLE_DELAY,
     lazy: Boolean = false
 ): AdditiveAnimator {
     return AdditiveAnimator.animate(this)
@@ -38,7 +38,7 @@ fun View.fadeWithFadeVisiblity(
 
 fun View.fadeWith(
     lottie: LottieAnimationView,
-    minimumDelay: Long = 1000L,
+    minimumDelay: Long = VISIBLE_DELAY,
     lazy: Boolean = false
 ): AdditiveAnimator {
     if (lottie.repeatCount == LottieDrawable.INFINITE)

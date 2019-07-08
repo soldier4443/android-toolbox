@@ -7,6 +7,8 @@ import com.turastory.androidtoolbox.build.lottie
 import com.turastory.androidtoolbox.build.transitionx
 
 dependencies {
+    implementation(project(":core"))
+
     implementation(kotlinJvm)
     implementation(androidx("appcompat", version = Version.Libs.appcompat))
     implementation(androidx("core", "ktx", version = Version.Libs.core))
