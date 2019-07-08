@@ -5,6 +5,7 @@ fun includeProject(name: String, projectPath: String? = null) {
 
 includeBuild("build-tools")
 includeProject(":lab")
+includeProject(":core", "libs/core")
 includeProject(":databinding", "libs/databinding")
 includeProject(":lifecycle", "libs/lifecycle")
 includeProject(":animation", "libs/animation")
