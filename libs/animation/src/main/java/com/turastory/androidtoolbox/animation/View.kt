@@ -7,6 +7,33 @@ import com.airbnb.lottie.LottieDrawable
 import com.turastory.androidtoolbox.core.gone
 import com.turastory.androidtoolbox.core.visible
 
+fun View.fadeIn(
+    duration: Long = DURATION_DEFAULT,
+    lazy: Boolean = false
+): AdditiveAnimator {
+    visible()
+    return AdditiveAnimator.animate(this)
+        .setDuration(duration)
+        .alpha(1f)
+        .apply {
+            if (!lazy) start()
+        }
+}
+
+fun View.fadeOut(
+    duration: Long = DURATION_DEFAULT,
+    lazy: Boolean = false
+): AdditiveAnimator {
+    visible()
+    return AdditiveAnimator.animate(this)
+        .setDuration(duration)
+        .alpha(0f)
+        .addEndAction { gone() }
+        .apply {
+            if (!lazy) start()
+        }
+}
+
 fun View.fade(
     delay: Long = VISIBLE_DELAY,
     lazy: Boolean = false
