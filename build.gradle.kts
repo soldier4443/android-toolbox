@@ -10,6 +10,7 @@ buildscript {
         classpath("com.android.tools.build:gradle:3.4.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.31")
         classpath("com.turastory:build-tools:0.0.1")
+        classpath("com.turastory:build-tools-internal:0.0.1")
     }
 }
 

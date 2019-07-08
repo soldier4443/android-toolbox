@@ -1,6 +1,7 @@
-import com.turastory.androidtoolbox.build.Version
 import com.turastory.androidtoolbox.build.android.configureCommons
 import com.turastory.androidtoolbox.build.androidx
+import com.turastory.androidtoolbox.build.internal.Lab
+import com.turastory.androidtoolbox.build.internal.Libs
 import com.turastory.androidtoolbox.build.junit
 import com.turastory.androidtoolbox.build.kotlinJvm
 import com.turastory.androidtoolbox.build.kotlinReflect
@@ -41,27 +42,27 @@ dependencies {
     implementation(project(":lifecycle"))
     implementation(project(":animation"))
 
-    implementation(material(Version.Lab.material))
+    implementation(material(Lab.material))
 
     implementation(kotlinJvm)
     implementation(kotlinReflect)
-    implementation(androidx("appcompat", version = Version.Lab.appcompat))
-    implementation(androidx("core", "ktx", version = Version.Lab.core))
-    implementation(androidx("constraintlayout", version = Version.Lab.constraintLayout))
+    implementation(androidx("appcompat", version = Lab.appcompat))
+    implementation(androidx("core", "ktx", version = Lab.core))
+    implementation(androidx("constraintlayout", version = Lab.constraintLayout))
 
-    implementation(androidx("lifecycle", "extensions", version = Version.Libs.lifecycle))
-    implementation(androidx("lifecycle", "runtime", version = Version.Lab.lifecycle))
-    implementation(androidx("lifecycle", "viewmodel-ktx", version = Version.Lab.lifecycle))
-    implementation(androidx("lifecycle", "livedata-ktx", version = Version.Lab.lifecycle))
+    implementation(androidx("lifecycle", "extensions", version = Libs.lifecycle))
+    implementation(androidx("lifecycle", "runtime", version = Lab.lifecycle))
+    implementation(androidx("lifecycle", "viewmodel-ktx", version = Lab.lifecycle))
+    implementation(androidx("lifecycle", "livedata-ktx", version = Lab.lifecycle))
 
     implementation(rxJava)
     implementation(rxAndroid)
     implementation(rxBinding())
 
     implementation("at.wirecube:additive_animations:1.7.2")
-    implementation(lottie(Version.Lab.lottie))
+    implementation(lottie(Lab.lottie))
 
     testImplementation(junit)
-    androidTestImplementation("androidx.test:runner:${Version.Lab.test}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${Version.Lab.espresso}")
+    androidTestImplementation("androidx.test:runner:${Lab.test}")
+    androidTestImplementation("androidx.test.espresso:espresso-core:${Lab.espresso}")
 }

@@ -2,7 +2,7 @@ package com.turastory.androidtoolbox.build.android
 
 import com.android.build.gradle.LibraryExtension
 import com.android.build.gradle.TestedExtension
-import com.turastory.androidtoolbox.build.Version
+import com.turastory.androidtoolbox.build.CommonVersions
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -29,12 +29,12 @@ fun TestedExtension.configureCommons(
     code: Int,
     name: String
 ) {
-    compileSdkVersion(Version.Android.compileSdkVersion)
-    buildToolsVersion(Version.Android.buildToolsVersion)
+    compileSdkVersion(CommonVersions.Android.compileSdkVersion)
+    buildToolsVersion(CommonVersions.Android.buildToolsVersion)
 
     defaultConfig {
-        minSdkVersion(Version.Android.minSdkVersion)
-        targetSdkVersion(Version.Android.targetSdkVersion)
+        minSdkVersion(CommonVersions.Android.minSdkVersion)
+        targetSdkVersion(CommonVersions.Android.targetSdkVersion)
         versionCode = code
         versionName = name
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
