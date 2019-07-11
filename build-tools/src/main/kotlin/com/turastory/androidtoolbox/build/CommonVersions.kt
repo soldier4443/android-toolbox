@@ -7,6 +7,7 @@ object CommonVersions {
     // ReactiveX
     const val rxJava = "2.2.9"
     const val rxAndroid = "2.1.1"
+    const val rxKotlin = "2.3.0"
     const val rxBinding = "3.0.0-alpha2"
 
     object Android {

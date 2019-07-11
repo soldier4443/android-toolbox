@@ -19,6 +19,9 @@ val DependencyHandler.junit
 val DependencyHandler.rxJava: String
     get() = "io.reactivex.rxjava2:rxjava:${CommonVersions.rxJava}"
 
+val DependencyHandler.rxKotlin: String
+    get() = "io.reactivex.rxjava2:rxkotlin:${CommonVersions.rxKotlin}"
+
 val DependencyHandler.rxAndroid: String
     get() = "io.reactivex.rxjava2:rxandroid:${CommonVersions.rxAndroid}"
 

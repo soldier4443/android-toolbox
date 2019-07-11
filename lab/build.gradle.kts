@@ -10,6 +10,7 @@ import com.turastory.androidtoolbox.build.material
 import com.turastory.androidtoolbox.build.rxAndroid
 import com.turastory.androidtoolbox.build.rxBinding
 import com.turastory.androidtoolbox.build.rxJava
+import com.turastory.androidtoolbox.build.rxKotlin
 
 plugins {
     id("com.android.application")
@@ -57,6 +58,7 @@ dependencies {
 
     implementation(rxJava)
     implementation(rxAndroid)
+    implementation(rxKotlin)
     implementation(rxBinding())
 
     implementation("at.wirecube:additive_animations:1.7.2")
