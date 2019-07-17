@@ -5,7 +5,7 @@ import io.reactivex.disposables.Disposable
 
 abstract class RxBaseActivity : BaseActivity() {
 
-    private val disposables = CompositeDisposable()
+    protected val disposables = CompositeDisposable()
 
     protected operator fun Disposable.unaryPlus() {
         disposables.add(this)
