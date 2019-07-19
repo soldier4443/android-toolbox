@@ -1,7 +1,6 @@
 package com.turastory.androidtoolbox.viewpager
 
 import android.os.Bundle
-import com.jakewharton.rxbinding3.view.clicks
 import com.turastory.androidtoolbox.R
 import com.turastory.androidtoolbox.RxBaseActivity
 import com.turastory.androidtoolbox.configurable.TestBase
@@ -17,7 +16,7 @@ class ViewPagerTestActivity : RxBaseActivity(), TestBase {
         get() = "ViewPager"
 
     private lateinit var binding: ActivityViewPagerTestBinding
-    private val simpleAdapter by lazy { SimpleAdapter(supportFragmentManager) }
+    private val simpleAdapter by lazy { InfiniteAdapter(supportFragmentManager) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +24,7 @@ class ViewPagerTestActivity : RxBaseActivity(), TestBase {
 
         with(binding) {
             viewPager.adapter = simpleAdapter
+            viewPager.currentItem = InfiniteAdapter.loopCount / 2
         }
     }
 }
