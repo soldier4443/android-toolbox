@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="appearance_spoqa" parent="@android:style/TextAppearance">
+        <item name="fontPath">fonts/spoqa_han_sans_regular.ttf</item>
+    </style>
+
 </resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/label_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World"
+            android:textColor="@color/black_1"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/label_fontPath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spoqa using fontPath"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/text_fontPath"
+            fontPath="fonts/spoqa_han_sans_regular.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World"
+            android:textColor="@color/black_1"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/label_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spoqa using style"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/text_style"
+            style="@style/appearance_spoqa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World"
+            android:textColor="@color/black_1"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/label_appearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spoqa using text appearance"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/text_appearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World"
+            android:textAppearance="@style/appearance_spoqa"
+            android:textColor="@color/black_1"
+            android:textSize="20dp" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/label_flow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:constraint_referenced_ids="label_default,label_fontPath,label_style,label_appearance"
+            app:flow_horizontalAlign="end"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/text_flow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/text_flow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:constraint_referenced_ids="text_default,text_fontPath,text_style,text_appearance"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/label_flow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

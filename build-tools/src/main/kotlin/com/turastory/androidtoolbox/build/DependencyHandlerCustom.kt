@@ -11,3 +11,6 @@ fun DependencyHandler.lottie(version: String) =
 
 fun DependencyHandler.transitionx(version: String) =
     "in.arunkumarsampath:transition-x:$version"
+
+fun DependencyHandler.calligraphy(version: String) =
+    "uk.co.chrisjenx:calligraphy:$version"

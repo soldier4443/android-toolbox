@@ -1,5 +1,6 @@
 import com.turastory.androidtoolbox.build.android.configureCommons
 import com.turastory.androidtoolbox.build.androidx
+import com.turastory.androidtoolbox.build.calligraphy
 import com.turastory.androidtoolbox.build.internal.Lab
 import com.turastory.androidtoolbox.build.internal.Libs
 import com.turastory.androidtoolbox.build.junit
@@ -63,6 +64,7 @@ dependencies {
 
     implementation("at.wirecube:additive_animations:1.7.2")
     implementation(lottie(Lab.lottie))
+    implementation(calligraphy(Lab.calligraphy))
 
     testImplementation(junit)
     androidTestImplementation("androidx.test:runner:${Lab.test}")
