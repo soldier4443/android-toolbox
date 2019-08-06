@@ -23,7 +23,9 @@ allprojects {
         jcenter()
     }
 
-    if (this != rootProject && name != "lab") {
+    if (this != rootProject &&
+        name != "lab" &&
+        projectDir.parentFile.name != "incubating") {
         println("Library Configuration Targets: $name")
         configureAndroidCommons(libVersionCode, libVersionName)
     }
