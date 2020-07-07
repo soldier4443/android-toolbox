@@ -12,5 +12,3 @@ includeProject(":core", "libs/core")
 includeProject(":databinding", "libs/databinding")
 includeProject(":lifecycle", "libs/lifecycle")
 includeProject(":animation", "libs/animation")
-
-includeProject(":either", "incubating/either")
