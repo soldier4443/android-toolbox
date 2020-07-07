@@ -2,7 +2,7 @@ package com.turastory.androidtoolbox.build
 
 object CommonVersions {
     const val junit = "4.12"
-    const val kotlin = "1.3.31"
+    const val kotlin = "1.3.72"
 
     // ReactiveX
     const val rxJava = "2.2.9"

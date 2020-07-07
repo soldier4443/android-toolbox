@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
-    kotlin("jvm") version "1.3.31"
+    kotlin("jvm") version "1.3.72"
 }
 
 group = "com.turastory"
@@ -19,7 +19,7 @@ dependencies {
     implementation(gradleKotlinDsl())
     implementation(kotlin("gradle-plugin"))
     implementation(kotlin("stdlib-jdk8"))
-    implementation("com.android.tools.build:gradle:3.4.1")
+    implementation("com.android.tools.build:gradle:4.0.0")
 }
 
 tasks.withType<KotlinCompile> {
