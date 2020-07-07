@@ -7,28 +7,16 @@ import org.gradle.kotlin.dsl.kotlin
  * DependencyHandler extensions for common dependencies
  */
 
-val DependencyHandler.kotlinJvm
-    get() = kotlin("stdlib-jdk8", CommonVersions.kotlin)
+fun DependencyHandler.kotlinJvm(version: String) = kotlin("stdlib-jdk8", version)
+fun DependencyHandler.kotlinReflect(version: String) = kotlin("reflect", version)
 
-val DependencyHandler.kotlinReflect
-    get() = kotlin("reflect", CommonVersions.kotlin)
+fun DependencyHandler.junit(version: String) = "junit:junit:${version}"
 
-val DependencyHandler.junit
-    get() = "junit:junit:${CommonVersions.junit}"
+fun DependencyHandler.rxJava(version: String) = "io.reactivex.rxjava2:rxjava:${version}"
+fun DependencyHandler.rxKotlin(version: String) = "io.reactivex.rxjava2:rxkotlin:${version}"
+fun DependencyHandler.rxAndroid(version: String) = "io.reactivex.rxjava2:rxandroid:${version}"
 
-val DependencyHandler.rxJava: String
-    get() = "io.reactivex.rxjava2:rxjava:${CommonVersions.rxJava}"
-
-val DependencyHandler.rxKotlin: String
-    get() = "io.reactivex.rxjava2:rxkotlin:${CommonVersions.rxKotlin}"
-
-val DependencyHandler.rxAndroid: String
-    get() = "io.reactivex.rxjava2:rxandroid:${CommonVersions.rxAndroid}"
-
-fun DependencyHandler.rxBinding(
-    module: String? = null,
-    version: String = CommonVersions.rxBinding
-): String =
+fun DependencyHandler.rxBinding(module: String? = null, version: String): String =
     "com.jakewharton.rxbinding3:rxbinding${optionalModule(module)}:$version"
 
 fun DependencyHandler.kotlinx(module: String, version: String? = null): Any =
@@ -44,5 +32,4 @@ fun DependencyHandler.material(version: String): Any =
     "com.google.android.material:material:$version"
 
 private fun optionalModule(module: String?) = module?.let { "-$module" } ?: ""
-
 private fun optionalVersion(version: String?) = version?.let { ":$version" } ?: ""

@@ -1,13 +1,9 @@
-import com.turastory.androidtoolbox.build.androidx
-import com.turastory.androidtoolbox.build.archCore
-import com.turastory.androidtoolbox.build.internal.Libs
-import com.turastory.androidtoolbox.build.junit
-import com.turastory.androidtoolbox.build.kotlinJvm
+import com.turastory.androidtoolbox.build.*
 
 dependencies {
-    implementation(kotlinJvm)
-    implementation(androidx("appcompat", version = Libs.appcompat))
-    implementation(androidx("core", "ktx", version = Libs.core))
-    testImplementation(archCore("testing", version = Libs.archCore))
-    testImplementation(junit)
+    implementation(kotlinJvm(CommonVersions.kotlin))
+    implementation(androidx("appcompat", version = CommonVersions.appcompat))
+    implementation(androidx("core", "ktx", version = CommonVersions.core))
+    testImplementation(archCore("testing", version = CommonVersions.archCore))
+    testImplementation(junit(CommonVersions.junit))
 }

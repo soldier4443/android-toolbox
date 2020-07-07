@@ -1,17 +1,5 @@
+import com.turastory.androidtoolbox.build.*
 import com.turastory.androidtoolbox.build.android.configureCommons
-import com.turastory.androidtoolbox.build.androidx
-import com.turastory.androidtoolbox.build.calligraphy
-import com.turastory.androidtoolbox.build.internal.Lab
-import com.turastory.androidtoolbox.build.internal.Libs
-import com.turastory.androidtoolbox.build.junit
-import com.turastory.androidtoolbox.build.kotlinJvm
-import com.turastory.androidtoolbox.build.kotlinReflect
-import com.turastory.androidtoolbox.build.lottie
-import com.turastory.androidtoolbox.build.material
-import com.turastory.androidtoolbox.build.rxAndroid
-import com.turastory.androidtoolbox.build.rxBinding
-import com.turastory.androidtoolbox.build.rxJava
-import com.turastory.androidtoolbox.build.rxKotlin
 
 plugins {
     id("com.android.application")
@@ -44,29 +32,28 @@ dependencies {
     implementation(project(":lifecycle"))
     implementation(project(":animation"))
 
-    implementation(material(Lab.material))
+    implementation(material(CommonVersions.material))
 
-    implementation(kotlinJvm)
-    implementation(kotlinReflect)
-    implementation(androidx("appcompat", version = Lab.appcompat))
-    implementation(androidx("core", "ktx", version = Lab.core))
-    implementation(androidx("constraintlayout", version = Lab.constraintLayout))
+    implementation(kotlinJvm(CommonVersions.kotlin))
+    implementation(kotlinReflect(CommonVersions.kotlin))
+    implementation(androidx("appcompat", version = CommonVersions.appcompat))
+    implementation(androidx("core", "ktx", version = CommonVersions.core))
+    implementation(androidx("constraintlayout", version = CommonVersions.constraintLayout))
 
-    implementation(androidx("lifecycle", "extensions", version = Libs.lifecycle))
-    implementation(androidx("lifecycle", "runtime", version = Lab.lifecycle))
-    implementation(androidx("lifecycle", "viewmodel-ktx", version = Lab.lifecycle))
-    implementation(androidx("lifecycle", "livedata-ktx", version = Lab.lifecycle))
+    implementation(androidx("lifecycle", "runtime-ktx", version = CommonVersions.lifecycle))
+    implementation(androidx("lifecycle", "viewmodel-ktx", version = CommonVersions.lifecycle))
+    implementation(androidx("lifecycle", "livedata-ktx", version = CommonVersions.lifecycle))
 
-    implementation(rxJava)
-    implementation(rxAndroid)
-    implementation(rxKotlin)
-    implementation(rxBinding())
+    implementation(rxJava(CommonVersions.rxJava))
+    implementation(rxAndroid(CommonVersions.rxAndroid))
+    implementation(rxKotlin(CommonVersions.rxKotlin))
+    implementation(rxBinding(version = CommonVersions.rxBinding))
 
     implementation("at.wirecube:additive_animations:1.7.2")
-    implementation(lottie(Lab.lottie))
-    implementation(calligraphy(Lab.calligraphy))
+    implementation(lottie(CommonVersions.lottie))
+    implementation(calligraphy(CommonVersions.calligraphy))
 
-    testImplementation(junit)
-    androidTestImplementation("androidx.test:runner:${Lab.test}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${Lab.espresso}")
+    testImplementation(junit(CommonVersions.junit))
+    androidTestImplementation("androidx.test:runner:${CommonVersions.test}")
+    androidTestImplementation("androidx.test.espresso:espresso-core:${CommonVersions.espresso}")
 }
