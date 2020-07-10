@@ -24,9 +24,9 @@ object CommonVersions {
     const val transition = "1.0.1"
 
     object Android {
-        const val compileSdkVersion = 28
-        const val targetSdkVersion = 28
-        const val minSdkVersion = 21
-        const val buildToolsVersion = "28.0.3"
+        const val compileSdkVersion = 29
+        const val targetSdkVersion = 29
+        const val minSdkVersion = 23
+        const val buildToolsVersion = "29.0.3"
     }
 }
