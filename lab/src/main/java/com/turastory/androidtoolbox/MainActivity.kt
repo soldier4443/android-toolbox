@@ -6,18 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import com.turastory.androidtoolbox.databinding.ActivityMainBinding
-import com.turastory.androidtoolbox.databinding.bind
 import kotlin.reflect.KClass
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseBindingActivity<ActivityMainBinding>() {
+
+    override fun provideBinding(savedInstanceState: Bundle?): ActivityMainBinding =
+        ActivityMainBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = bind<ActivityMainBinding>(R.layout.activity_main)
-
         binding.list.adapter = MainListAdapter { kClass ->
             startActivity(Intent(this, kClass.java))
         }
