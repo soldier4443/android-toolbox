@@ -1,5 +1,6 @@
 import com.turastory.androidtoolbox.build.*
 import com.turastory.androidtoolbox.build.android.configureCommons
+import com.turastory.androidtoolbox.build.android.configureKotlinCommons
 
 plugins {
     id("com.android.application")
@@ -11,6 +12,7 @@ android {
         code = 1,
         name = "1.0.0"
     )
+    configureKotlinCommons()
 
     buildTypes {
         getByName("release") {
@@ -19,11 +21,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     buildFeatures {

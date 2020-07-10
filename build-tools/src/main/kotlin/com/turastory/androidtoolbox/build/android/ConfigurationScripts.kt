@@ -7,12 +7,23 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 fun Project.configureAndroidCommons(code: Int, name: String) {
     apply(plugin = "android-library")
     apply(plugin = "kotlin-android")
     configure<LibraryExtension> {
         configureCommons(code, name)
+    }
+    configureKotlinCommons()
+}
+
+fun Project.configureKotlinCommons() {
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
+        }
     }
 }
 
@@ -21,8 +32,7 @@ fun Project.isAndroidProject(): Boolean {
     plugins.forEach {
         println(it)
     }
-    return plugins.hasPlugin("com.android.library") ||
-        plugins.hasPlugin("com.android.application")
+    return plugins.hasPlugin("com.android.library") || plugins.hasPlugin("com.android.application")
 }
 
 fun TestedExtension.configureCommons(

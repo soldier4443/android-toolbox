@@ -1,4 +1,5 @@
 import com.turastory.androidtoolbox.build.android.configureAndroidCommons
+import com.turastory.androidtoolbox.build.android.isAndroidProject
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
@@ -23,9 +24,11 @@ allprojects {
         jcenter()
     }
 
-    if (this != rootProject &&
+    val project = this
+    if (project != rootProject &&
         name != "lab" &&
-        projectDir.parentFile.name != "incubating") {
+        projectDir.parentFile.name != "incubating"
+    ) {
         println("Library Configuration Targets: $name")
         configureAndroidCommons(libVersionCode, libVersionName)
     }
