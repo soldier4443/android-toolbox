@@ -16,10 +16,10 @@ repositories {
 }
 
 dependencies {
-    implementation(gradleKotlinDsl())
-    implementation(kotlin("gradle-plugin"))
-    implementation(kotlin("stdlib-jdk8"))
-    implementation("com.android.tools.build:gradle:4.0.0")
+    compileOnly(gradleKotlinDsl())
+    compileOnly(kotlin("gradle-plugin"))
+    compileOnly(kotlin("stdlib-jdk8"))
+    compileOnly("com.android.tools.build:gradle:4.0.0")
 }
 
 tasks.withType<KotlinCompile> {
