@@ -15,6 +15,7 @@ fun <T : ViewDataBinding> T.withLifecycleOwner(lifecycleOwner: LifecycleOwner) =
     binding.lifecycleOwner = lifecycleOwner
 }
 
-fun <T : ViewBinding> T.withLifecycleOwner(lifecycleOwner: LifecycleOwner): T = apply {
-    if (this is ViewDataBinding) withLifecycleOwner(lifecycleOwner)
+fun <T : ViewBinding> T.withLifecycleOwner(lifecycleOwner: LifecycleOwner): T = also { binding ->
+    if (binding is ViewDataBinding)
+        binding.lifecycleOwner = lifecycleOwner
 }
