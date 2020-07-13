@@ -3,7 +3,7 @@ package com.turastory.androidtoolbox.animation
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
@@ -13,7 +13,7 @@ import com.turastory.androidtoolbox.animation.TransitionTestAdapter.ViewHolder
 import com.turastory.androidtoolbox.base.ModelListener
 import com.turastory.androidtoolbox.base.PositionedModelListener
 import com.turastory.androidtoolbox.configurable.TestBase
-import com.turastory.androidtoolbox.databinding.BindingViewHolder
+import com.turastory.androidtoolbox.databinding.BaseBindingViewHolder
 import com.turastory.androidtoolbox.databinding.LayoutRvTransitionTestBinding
 import com.turastory.androidtoolbox.databinding.LayoutSimpleItemBinding
 
@@ -33,7 +33,7 @@ class RecyclerViewTransitionFragment :
         TransitionTestModel(6, true)
     )
 
-    private val transitionTestAdapter = TransitionTestAdapter { position, _ ->
+    private val transitionTestAdapter = TransitionTestAdapter(viewLifecycleOwner) { position, _ ->
         toggleItem(position)
     }
 
@@ -66,8 +66,10 @@ data class TransitionTestModel(
     val active: Boolean
 )
 
-class TransitionTestAdapter(private val listener: PositionedModelListener<TransitionTestModel>) :
-    ListAdapter<TransitionTestModel, ViewHolder>(diff) {
+class TransitionTestAdapter(
+    private val lifecycleOwner: LifecycleOwner,
+    private val listener: PositionedModelListener<TransitionTestModel>
+) : ListAdapter<TransitionTestModel, ViewHolder>(diff) {
 
     companion object {
         val diff = object : DiffUtil.ItemCallback<TransitionTestModel>() {
@@ -86,12 +88,13 @@ class TransitionTestAdapter(private val listener: PositionedModelListener<Transi
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = DataBindingUtil.inflate<LayoutSimpleItemBinding>(
+        val binding = LayoutSimpleItemBinding.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.layout_simple_item,
             parent,
             false
-        )
+        ).also { binding ->
+            binding.lifecycleOwner = lifecycleOwner
+        }
 
         return ViewHolder(binding)
     }
@@ -103,7 +106,7 @@ class TransitionTestAdapter(private val listener: PositionedModelListener<Transi
     }
 
     class ViewHolder(binding: LayoutSimpleItemBinding) :
-        BindingViewHolder<LayoutSimpleItemBinding>(binding) {
+        BaseBindingViewHolder<LayoutSimpleItemBinding>(binding) {
 
         fun bind(model: TransitionTestModel, listener: ModelListener<TransitionTestModel>) {
             binding.text.text = "${model.id}"
