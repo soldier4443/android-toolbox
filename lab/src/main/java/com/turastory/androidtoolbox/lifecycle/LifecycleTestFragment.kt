@@ -4,16 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.observe
-import com.turastory.androidtoolbox.base.app.BaseRxBindingFragment
 import com.turastory.androidtoolbox.R
-import com.turastory.androidtoolbox.configurable.TestBase
+import com.turastory.androidtoolbox.base.app.BaseRxBindingFragment
 import com.turastory.androidtoolbox.databinding.LayoutLifecycleTestBinding
 import com.turastory.androidtoolbox.lifecycle.LifecycleTestViewModel.State
 
-class LifecycleTestFragment : BaseRxBindingFragment<LayoutLifecycleTestBinding>(), TestBase {
-
-    override val actionBarName: String
-        get() = "Lifecycle"
+class LifecycleTestFragment : BaseRxBindingFragment<LayoutLifecycleTestBinding>() {
 
     private val vm by lazy { getViewModel<LifecycleTestViewModel>() }
 

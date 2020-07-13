@@ -7,23 +7,18 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
-import com.turastory.androidtoolbox.base.app.BaseRxBindingFragment
 import com.turastory.androidtoolbox.R
 import com.turastory.androidtoolbox.animation.TransitionTestAdapter.ViewHolder
 import com.turastory.androidtoolbox.base.ModelListener
 import com.turastory.androidtoolbox.base.PositionedModelListener
-import com.turastory.androidtoolbox.configurable.TestBase
+import com.turastory.androidtoolbox.base.app.BaseRxBindingFragment
 import com.turastory.androidtoolbox.databinding.BaseBindingViewHolder
 import com.turastory.androidtoolbox.databinding.LayoutRvTransitionTestBinding
 import com.turastory.androidtoolbox.databinding.LayoutSimpleItemBinding
 import com.turastory.androidtoolbox.databinding.withLifecycleOwner
 
 class RecyclerViewTransitionFragment :
-    BaseRxBindingFragment<LayoutRvTransitionTestBinding>(),
-    TestBase {
-
-    override val actionBarName: String
-        get() = "RecyclerView Transition"
+    BaseRxBindingFragment<LayoutRvTransitionTestBinding>() {
 
     private val items = mutableListOf(
         TransitionTestModel(1, true),

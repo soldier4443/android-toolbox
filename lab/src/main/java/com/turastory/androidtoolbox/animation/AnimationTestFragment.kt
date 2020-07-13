@@ -7,16 +7,12 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import com.airbnb.lottie.LottieDrawable
 import com.jakewharton.rxbinding3.view.clicks
-import com.turastory.androidtoolbox.base.app.BaseRxBindingFragment
 import com.turastory.androidtoolbox.R
-import com.turastory.androidtoolbox.configurable.TestBase
+import com.turastory.androidtoolbox.base.app.BaseRxBindingFragment
 import com.turastory.androidtoolbox.databinding.LayoutAnimationTestBinding
 import com.turastory.androidtoolbox.ext.preventMultipleEmission
 
-class AnimationTestFragment : BaseRxBindingFragment<LayoutAnimationTestBinding>(), TestBase {
-
-    override val actionBarName: String
-        get() = "Animation"
+class AnimationTestFragment : BaseRxBindingFragment<LayoutAnimationTestBinding>() {
 
     override fun provideBinding(
         inflater: LayoutInflater,
