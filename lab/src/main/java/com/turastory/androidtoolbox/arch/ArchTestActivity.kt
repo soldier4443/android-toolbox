@@ -1,24 +1,21 @@
 package com.turastory.androidtoolbox.arch
 
 import android.os.Bundle
-import android.util.Log
 import com.jakewharton.rxbinding3.view.clicks
-import com.turastory.androidtoolbox.R
-import com.turastory.androidtoolbox.RxBaseActivity
-import com.turastory.androidtoolbox.databinding.ActivityArchTestBinding
-import com.turastory.androidtoolbox.databinding.bind
+import com.turastory.androidtoolbox.BaseRxBindingActivity
+import com.turastory.androidtoolbox.databinding.LayoutArchTestBinding
 import com.turastory.androidtoolbox.ext.preventMultipleEmission
 
-class ArchTestActivity : RxBaseActivity() {
+class ArchTestActivity : BaseRxBindingActivity<LayoutArchTestBinding>() {
 
-    private lateinit var binding: ActivityArchTestBinding
     private val base = Base(disposables)
     private val shotgunAddon = ShotgunAddon(base)
 
+    override fun provideBinding(savedInstanceState: Bundle?): LayoutArchTestBinding =
+        LayoutArchTestBinding.inflate(layoutInflater)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = bind(R.layout.activity_arch_test)
-
         +binding.shotButton.clicks()
             .preventMultipleEmission()
             .map { ShotgunAddon.Intent.PullTrigger }

@@ -4,24 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import com.turastory.androidtoolbox.R
+import com.turastory.androidtoolbox.BaseBindingFragment
+import com.turastory.androidtoolbox.databinding.LayoutDummyBinding
 
-class DummyFragment : Fragment() {
-    override fun onCreateView(
+class DummyFragment : BaseBindingFragment<LayoutDummyBinding>() {
+
+    override fun provideBinding(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_dummy, container, false)
-    }
+    ): LayoutDummyBinding = LayoutDummyBinding.inflate(layoutInflater)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val text = view.findViewById<TextView>(R.id.text)
-
-        text.text = words.random()
+        binding.text.text = words.random()
     }
 }

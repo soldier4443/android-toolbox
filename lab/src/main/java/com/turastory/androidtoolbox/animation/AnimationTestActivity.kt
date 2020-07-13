@@ -5,19 +5,19 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import com.airbnb.lottie.LottieDrawable
 import com.jakewharton.rxbinding3.view.clicks
+import com.turastory.androidtoolbox.BaseRxBindingActivity
 import com.turastory.androidtoolbox.R
-import com.turastory.androidtoolbox.RxBaseActivity
 import com.turastory.androidtoolbox.configurable.TestBase
-import com.turastory.androidtoolbox.databinding.ActivityAnimationTestBinding
-import com.turastory.androidtoolbox.databinding.bind
+import com.turastory.androidtoolbox.databinding.LayoutAnimationTestBinding
 import com.turastory.androidtoolbox.ext.preventMultipleEmission
 
-class AnimationTestActivity : RxBaseActivity(), TestBase {
+class AnimationTestActivity : BaseRxBindingActivity<LayoutAnimationTestBinding>(), TestBase {
 
     override val actionBarName: String
         get() = "Animation"
 
-    private lateinit var binding: ActivityAnimationTestBinding
+    override fun provideBinding(savedInstanceState: Bundle?): LayoutAnimationTestBinding =
+        LayoutAnimationTestBinding.inflate(layoutInflater)
 
     private fun fadeInAnimation(target: View, duration: Long) {
         val animation = AnimationUtils.loadAnimation(this, R.anim.alpha_0_to_1)
@@ -32,7 +32,6 @@ class AnimationTestActivity : RxBaseActivity(), TestBase {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = bind(R.layout.activity_animation_test)
         binding.frontLottie.repeatCount = LottieDrawable.INFINITE
 
         +binding.animateButton

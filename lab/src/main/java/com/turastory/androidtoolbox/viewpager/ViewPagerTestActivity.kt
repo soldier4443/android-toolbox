@@ -1,27 +1,25 @@
 package com.turastory.androidtoolbox.viewpager
 
 import android.os.Bundle
-import com.turastory.androidtoolbox.R
-import com.turastory.androidtoolbox.RxBaseActivity
+import com.turastory.androidtoolbox.BaseRxBindingActivity
 import com.turastory.androidtoolbox.configurable.TestBase
-import com.turastory.androidtoolbox.databinding.ActivityViewPagerTestBinding
-import com.turastory.androidtoolbox.databinding.bind
+import com.turastory.androidtoolbox.databinding.LayoutViewPagerTestBinding
 
 /**
  * Test async data loading + update within view pager
  */
-class ViewPagerTestActivity : RxBaseActivity(), TestBase {
+class ViewPagerTestActivity : BaseRxBindingActivity<LayoutViewPagerTestBinding>(), TestBase {
 
     override val actionBarName: String
         get() = "ViewPager"
 
-    private lateinit var binding: ActivityViewPagerTestBinding
+    override fun provideBinding(savedInstanceState: Bundle?): LayoutViewPagerTestBinding =
+        LayoutViewPagerTestBinding.inflate(layoutInflater)
+
     private val simpleAdapter by lazy { InfiniteAdapter(supportFragmentManager) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = bind(R.layout.activity_view_pager_test)
-
         with(binding) {
             viewPager.adapter = simpleAdapter
             viewPager.currentItem = InfiniteAdapter.loopCount / 2

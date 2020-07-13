@@ -7,18 +7,20 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
+import com.turastory.androidtoolbox.BaseRxBindingActivity
 import com.turastory.androidtoolbox.R
-import com.turastory.androidtoolbox.RxBaseActivity
 import com.turastory.androidtoolbox.animation.TransitionTestAdapter.ViewHolder
 import com.turastory.androidtoolbox.base.ModelListener
 import com.turastory.androidtoolbox.base.PositionedModelListener
 import com.turastory.androidtoolbox.configurable.TestBase
-import com.turastory.androidtoolbox.databinding.ActivityRvTransitionTestBinding
 import com.turastory.androidtoolbox.databinding.BindingViewHolder
+import com.turastory.androidtoolbox.databinding.LayoutRvTransitionTestBinding
 import com.turastory.androidtoolbox.databinding.LayoutSimpleItemBinding
-import com.turastory.androidtoolbox.databinding.bind
 
-class RecyclerViewTransitionActivity : RxBaseActivity(), TestBase {
+class RecyclerViewTransitionActivity :
+    BaseRxBindingActivity<LayoutRvTransitionTestBinding>(),
+    TestBase {
+
     override val actionBarName: String
         get() = "RecyclerView Transition"
 
@@ -41,9 +43,11 @@ class RecyclerViewTransitionActivity : RxBaseActivity(), TestBase {
         transitionTestAdapter.submitList(items.toList())
     }
 
+    override fun provideBinding(savedInstanceState: Bundle?): LayoutRvTransitionTestBinding =
+        LayoutRvTransitionTestBinding.inflate(layoutInflater)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding: ActivityRvTransitionTestBinding = bind(R.layout.activity_rv_transition_test)
 
         with(binding.recyclerView) {
             adapter = transitionTestAdapter
