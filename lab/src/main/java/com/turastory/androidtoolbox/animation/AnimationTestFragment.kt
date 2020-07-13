@@ -1,26 +1,31 @@
 package com.turastory.androidtoolbox.animation
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import com.airbnb.lottie.LottieDrawable
 import com.jakewharton.rxbinding3.view.clicks
-import com.turastory.androidtoolbox.BaseRxBindingActivity
+import com.turastory.androidtoolbox.BaseRxBindingFragment
 import com.turastory.androidtoolbox.R
 import com.turastory.androidtoolbox.configurable.TestBase
 import com.turastory.androidtoolbox.databinding.LayoutAnimationTestBinding
 import com.turastory.androidtoolbox.ext.preventMultipleEmission
 
-class AnimationTestActivity : BaseRxBindingActivity<LayoutAnimationTestBinding>(), TestBase {
+class AnimationTestFragment : BaseRxBindingFragment<LayoutAnimationTestBinding>(), TestBase {
 
     override val actionBarName: String
         get() = "Animation"
 
-    override fun provideBinding(savedInstanceState: Bundle?): LayoutAnimationTestBinding =
-        LayoutAnimationTestBinding.inflate(layoutInflater)
+    override fun provideBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): LayoutAnimationTestBinding = LayoutAnimationTestBinding.inflate(layoutInflater)
 
     private fun fadeInAnimation(target: View, duration: Long) {
-        val animation = AnimationUtils.loadAnimation(this, R.anim.alpha_0_to_1)
+        val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.alpha_0_to_1)
         animation.duration = duration
 
         target.apply {

@@ -1,22 +1,27 @@
 package com.turastory.androidtoolbox.viewpager
 
 import android.os.Bundle
-import com.turastory.androidtoolbox.BaseRxBindingActivity
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import com.turastory.androidtoolbox.BaseRxBindingFragment
 import com.turastory.androidtoolbox.configurable.TestBase
 import com.turastory.androidtoolbox.databinding.LayoutViewPagerTestBinding
 
 /**
  * Test async data loading + update within view pager
  */
-class ViewPagerTestActivity : BaseRxBindingActivity<LayoutViewPagerTestBinding>(), TestBase {
+class ViewPagerTestFragment : BaseRxBindingFragment<LayoutViewPagerTestBinding>(), TestBase {
 
     override val actionBarName: String
         get() = "ViewPager"
 
-    override fun provideBinding(savedInstanceState: Bundle?): LayoutViewPagerTestBinding =
-        LayoutViewPagerTestBinding.inflate(layoutInflater)
+    override fun provideBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): LayoutViewPagerTestBinding = LayoutViewPagerTestBinding.inflate(layoutInflater)
 
-    private val simpleAdapter by lazy { InfiniteAdapter(supportFragmentManager) }
+    private val simpleAdapter by lazy { InfiniteAdapter(childFragmentManager) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

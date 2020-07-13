@@ -1,17 +1,22 @@
 package com.turastory.androidtoolbox.cycle
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import com.jakewharton.rxbinding3.view.clicks
-import com.turastory.androidtoolbox.BaseRxBindingActivity
+import com.turastory.androidtoolbox.BaseRxBindingFragment
 import com.turastory.androidtoolbox.databinding.LayoutCycleJsTestBinding
 import io.reactivex.android.schedulers.AndroidSchedulers
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicInteger
 
-class CycleJsTestActivity : BaseRxBindingActivity<LayoutCycleJsTestBinding>() {
+class CycleJsTestFragment : BaseRxBindingFragment<LayoutCycleJsTestBinding>() {
 
-    override fun provideBinding(savedInstanceState: Bundle?): LayoutCycleJsTestBinding =
-        LayoutCycleJsTestBinding.inflate(layoutInflater)
+    override fun provideBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): LayoutCycleJsTestBinding = LayoutCycleJsTestBinding.inflate(layoutInflater)
 
     private val counter = AtomicInteger(0)
 

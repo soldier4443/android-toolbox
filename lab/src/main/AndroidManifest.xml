@@ -18,11 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".animation.AnimationTestActivity" />
-        <activity android:name=".lifecycle.LifecycleTestActivity" />
-        <activity android:name=".animation.RecyclerViewTransitionActivity" />
+        <activity android:name=".animation.AnimationTestFragment" />
+        <activity android:name=".lifecycle.LifecycleTestFragment" />
+        <activity android:name=".animation.RecyclerViewTransitionFragment" />
         <activity android:name=".viewpager.ViewPagerTestActivity" />
-        <activity android:name=".arch.ArchTestActivity" />
+        <activity android:name=".arch.ArchTestFragment" />
     </application>
 
 </manifest>

@@ -18,4 +18,34 @@
         android:name="com.turastory.androidtoolbox.font.FontTestFragment"
         android:label="FontTestFragment" />
 
+    <fragment
+        android:id="@+id/AnimaionTestFragment"
+        android:name="com.turastory.androidtoolbox.animation.AnimationTestFragment"
+        android:label="AnimaionTestFragment" />
+
+    <fragment
+        android:id="@+id/RecyclerViewTransitionFragment"
+        android:name="com.turastory.androidtoolbox.animation.RecyclerViewTransitionFragment"
+        android:label="RecyclerViewTransitionFragment" />
+
+    <fragment
+        android:id="@+id/ArchTestFragment"
+        android:name="com.turastory.androidtoolbox.arch.ArchTestFragment"
+        android:label="ArchTestFragment" />
+
+    <fragment
+        android:id="@+id/CycleJsTestFramgent"
+        android:name="com.turastory.androidtoolbox.cycle.CycleJsTestFragment"
+        android:label="CycleJsTestFramgent" />
+
+    <fragment
+        android:id="@+id/LifecycleTestFragment"
+        android:name="com.turastory.androidtoolbox.lifecycle.LifecycleTestFragment"
+        android:label="LifecycleTestFragment" />
+
+    <fragment
+        android:id="@+id/ViewPagerTestFragment"
+        android:name="com.turastory.androidtoolbox.viewpager.ViewPagerTestFragment"
+        android:label="ViewPagerTestFragment" />
+
 </navigation>
