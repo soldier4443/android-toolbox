@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.turastory.androidtoolbox.databinding.withLifecycleOwner
 
 abstract class BaseBindingFragment<B : ViewBinding> : Fragment() {
 
@@ -17,11 +17,8 @@ abstract class BaseBindingFragment<B : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = provideBinding(inflater, container, savedInstanceState).also { binding ->
-            if (binding is ViewDataBinding) {
-                binding.lifecycleOwner = this
-            }
-        }
+        binding = provideBinding(inflater, container, savedInstanceState)
+            .withLifecycleOwner(viewLifecycleOwner)
         return binding.root
     }
 

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 import androidx.viewbinding.ViewBinding
+import com.turastory.androidtoolbox.databinding.withLifecycleOwner
 
 abstract class BaseBindingActivity<B : ViewBinding> : AppCompatActivity() {
 
@@ -11,11 +12,7 @@ abstract class BaseBindingActivity<B : ViewBinding> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = provideBinding(savedInstanceState).also { binding ->
-            if (binding is ViewDataBinding) {
-                binding.lifecycleOwner = this
-            }
-        }
+        binding = provideBinding(savedInstanceState).withLifecycleOwner(this)
         setContentView(binding.root)
     }
 

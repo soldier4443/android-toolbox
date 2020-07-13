@@ -16,6 +16,7 @@ import com.turastory.androidtoolbox.configurable.TestBase
 import com.turastory.androidtoolbox.databinding.BaseBindingViewHolder
 import com.turastory.androidtoolbox.databinding.LayoutRvTransitionTestBinding
 import com.turastory.androidtoolbox.databinding.LayoutSimpleItemBinding
+import com.turastory.androidtoolbox.databinding.withLifecycleOwner
 
 class RecyclerViewTransitionFragment :
     BaseRxBindingFragment<LayoutRvTransitionTestBinding>(),
@@ -87,17 +88,11 @@ class TransitionTestAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = LayoutSimpleItemBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
-        ).also { binding ->
-            binding.lifecycleOwner = lifecycleOwner
-        }
-
-        return ViewHolder(binding)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+        LayoutSimpleItemBinding
+            .inflate(LayoutInflater.from(parent.context), parent, false)
+            .withLifecycleOwner(lifecycleOwner)
+            .let(::ViewHolder)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position)) { model ->
