@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.turastory.androidtoolbox.BaseBindingFragment
+import com.turastory.androidtoolbox.base.app.BaseBindingFragment
 import com.turastory.androidtoolbox.databinding.LayoutDummyBinding
 
 class DummyFragment : BaseBindingFragment<LayoutDummyBinding>() {

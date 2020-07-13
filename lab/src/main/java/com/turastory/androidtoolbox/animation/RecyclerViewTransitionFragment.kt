@@ -7,7 +7,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
-import com.turastory.androidtoolbox.BaseRxBindingFragment
+import com.turastory.androidtoolbox.base.app.BaseRxBindingFragment
 import com.turastory.androidtoolbox.R
 import com.turastory.androidtoolbox.animation.TransitionTestAdapter.ViewHolder
 import com.turastory.androidtoolbox.base.ModelListener

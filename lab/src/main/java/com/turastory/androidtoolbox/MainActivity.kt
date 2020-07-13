@@ -3,6 +3,7 @@ package com.turastory.androidtoolbox
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.turastory.androidtoolbox.base.app.BaseBindingActivity
 import com.turastory.androidtoolbox.databinding.LayoutMainBinding
 
 

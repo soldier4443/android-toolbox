@@ -10,6 +10,8 @@ object CommonVersions {
     const val rxKotlin = "2.3.0"
     const val rxBinding = "3.0.0-alpha2"
 
+    const val activity = "1.1.0"
+    const val fragment = "1.2.5"
     const val appcompat = "1.1.0"
     const val recyclerview = "1.1.0"
     const val core = "1.3.0"

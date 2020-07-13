@@ -3,7 +3,7 @@ package com.turastory.androidtoolbox.viewpager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.turastory.androidtoolbox.BaseRxBindingFragment
+import com.turastory.androidtoolbox.base.app.BaseRxBindingFragment
 import com.turastory.androidtoolbox.configurable.TestBase
 import com.turastory.androidtoolbox.databinding.LayoutViewPagerTestBinding
 

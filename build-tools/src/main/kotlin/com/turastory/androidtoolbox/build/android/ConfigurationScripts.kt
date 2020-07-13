@@ -7,6 +7,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -59,5 +60,11 @@ fun TestedExtension.configureCommons(
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        sourceSets["main"].java.srcDir("src/main/kotlin")
+        sourceSets["test"].java.srcDirs("src/test/kotlin")
+        sourceSets["androidTest"].java.srcDir("src/androidTest/kotlin")
     }
 }

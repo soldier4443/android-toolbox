@@ -32,6 +32,8 @@
             <option value="$PROJECT_DIR$/build-tools-internal" />
             <option value="$PROJECT_DIR$/lab" />
             <option value="$PROJECT_DIR$/libs/animation" />
+            <option value="$PROJECT_DIR$/libs/base-app" />
+            <option value="$PROJECT_DIR$/libs/base-app-rx" />
             <option value="$PROJECT_DIR$/libs/core" />
             <option value="$PROJECT_DIR$/libs/databinding" />
             <option value="$PROJECT_DIR$/libs/lifecycle" />

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.turastory.androidtoolbox.base.app.BaseBindingFragment
 import com.turastory.androidtoolbox.databinding.LayoutHomeBinding
 
 class HomeFragment : BaseBindingFragment<LayoutHomeBinding>() {

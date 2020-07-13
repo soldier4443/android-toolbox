@@ -8,6 +8,8 @@ includeBuild("build-tools-internal")
 
 includeProject(":lab")
 
+includeProject(":base-app", "libs/base-app")
+includeProject(":base-app-rx", "libs/base-app-rx")
 includeProject(":core", "libs/core")
 includeProject(":databinding", "libs/databinding")
 includeProject(":lifecycle", "libs/lifecycle")

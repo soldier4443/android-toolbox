@@ -1,4 +1,4 @@
-package com.turastory.androidtoolbox
+package com.turastory.androidtoolbox.base.app
 
 import android.os.Bundle
 import android.view.LayoutInflater

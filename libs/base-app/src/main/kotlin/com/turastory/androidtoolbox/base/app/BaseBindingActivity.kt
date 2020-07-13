@@ -1,8 +1,7 @@
-package com.turastory.androidtoolbox
+package com.turastory.androidtoolbox.base.app
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.ViewDataBinding
 import androidx.viewbinding.ViewBinding
 import com.turastory.androidtoolbox.databinding.withLifecycleOwner
 

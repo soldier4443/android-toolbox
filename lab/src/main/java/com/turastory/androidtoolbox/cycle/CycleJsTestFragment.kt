@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.jakewharton.rxbinding3.view.clicks
-import com.turastory.androidtoolbox.BaseRxBindingFragment
+import com.turastory.androidtoolbox.base.app.BaseRxBindingFragment
 import com.turastory.androidtoolbox.databinding.LayoutCycleJsTestBinding
 import io.reactivex.android.schedulers.AndroidSchedulers
 import java.util.concurrent.TimeUnit

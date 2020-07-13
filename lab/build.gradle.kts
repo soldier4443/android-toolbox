@@ -34,6 +34,7 @@ dependencies {
     implementation(project(":databinding"))
     implementation(project(":lifecycle"))
     implementation(project(":animation"))
+    implementation(project(":base-app-rx"))
 
     implementation(material(CommonVersions.material))
 
