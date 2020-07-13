@@ -18,7 +18,10 @@ class HomeFragment : BaseBindingFragment<LayoutHomeBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.rvDestinations.apply {
-            adapter = DestinationAdapter(findNavController()::navigate).also { adapter ->
+            adapter = DestinationAdapter(
+                viewLifecycleOwner,
+                findNavController()::navigate
+            ).also { adapter ->
                 adapter.submitList(getDestinations())
             }
         }
