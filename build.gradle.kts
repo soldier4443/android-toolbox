@@ -1,5 +1,4 @@
 import com.turastory.androidtoolbox.build.android.configureAndroidCommons
-import com.turastory.androidtoolbox.build.android.isAndroidProject
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {

@@ -24,6 +24,7 @@ android {
     }
 
     buildFeatures {
+        viewBinding = true
         dataBinding = true
     }
 }
@@ -45,6 +46,9 @@ dependencies {
     implementation(androidx("lifecycle", "runtime-ktx", version = CommonVersions.lifecycle))
     implementation(androidx("lifecycle", "viewmodel-ktx", version = CommonVersions.lifecycle))
     implementation(androidx("lifecycle", "livedata-ktx", version = CommonVersions.lifecycle))
+
+    implementation(androidx("navigation", "fragment-ktx", version = CommonVersions.navigation))
+    implementation(androidx("navigation", "ui-ktx", version = CommonVersions.navigation))
 
     implementation(rxJava(CommonVersions.rxJava))
     implementation(rxAndroid(CommonVersions.rxAndroid))

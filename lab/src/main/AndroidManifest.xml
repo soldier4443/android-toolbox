@@ -23,7 +23,6 @@
         <activity android:name=".animation.RecyclerViewTransitionActivity" />
         <activity android:name=".viewpager.ViewPagerTestActivity" />
         <activity android:name=".arch.ArchTestActivity" />
-        <activity android:name=".font.FontTestActivity" />
     </application>
 
 </manifest>

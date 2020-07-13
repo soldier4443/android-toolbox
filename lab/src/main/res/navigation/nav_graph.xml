@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <!-- By setting id just like the name and the label,
+         we can manage the name, id and label at the same time.
+    -->
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.turastory.androidtoolbox.HomeFragment"
+        android:label="HomeFragment" />
+
+    <fragment
+        android:id="@+id/FontTestFragment"
+        android:name="com.turastory.androidtoolbox.font.FontTestFragment"
+        android:label="FontTestFragment" />
+
+</navigation>
