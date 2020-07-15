@@ -18,6 +18,9 @@ val libVersionCode = 1
 val libVersionName = "1.0.0"
 
 allprojects {
+    group = "com.turastory.androidtoolbox"
+    version = libVersionName
+
     repositories {
         google()
         jcenter()
