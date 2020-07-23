@@ -1,5 +1,4 @@
 import com.turastory.androidtoolbox.build.*
-import com.turastory.androidtoolbox.build.internal.StudioConfig
 
 android {
     buildFeatures {

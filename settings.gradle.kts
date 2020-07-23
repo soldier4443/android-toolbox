@@ -4,7 +4,6 @@ fun includeProject(name: String, projectPath: String? = null) {
 }
 
 includeBuild("build-tools")
-includeBuild("build-tools-internal")
 
 includeProject(":lab")
 
